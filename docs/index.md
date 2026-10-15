@@ -1,6 +1,6 @@
 #  Overview
 
-`merlin` is a simulator for non-Clifford quantum error correction that runs in polynomial time.
+`merlin-sim` is a simulator for non-Clifford quantum error correction that runs in polynomial time.
 
 
 ## Installation
@@ -30,7 +30,7 @@ p_true = sim.peek_z_probability(1)
 parity = sim.measure_observable("-XX", flip_probability=0.001)
 ```
 
-Note that `merlin` only supports certain kinds of X measurements such as flag or gauge measurements.
+Note that merlin only supports certain kinds of X measurements such as flag or gauge measurements.
 For unsupported measurements, the simulator will raise a `MeasurementError`:
 
 ```python

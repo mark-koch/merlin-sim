@@ -2,7 +2,7 @@
 
 `merlin-sim` is a simulator for non-Clifford quantum error correction circuits. It supports circuits that can be decomposed into CNOT, T, Paulis, Z-measurements and certain state-dependent *compatible* X-measurements. It keeps track of a representation of the state and can sample computational basis states, as well as compute expectation values and amplitudes, all in polynomial time in the circuit depth and size. It is based on the paper [Polynomial-time simulation of non-Clifford quantum error correction](https://arxiv.org/abs/2610.06811) by Serban Cercelescu, Mark Koch and Arthur Pesah.
 
-The documentation is available [here](https://mark-koch.github.io/merlin/).
+The documentation is available [here](https://mark-koch.github.io/merlin-sim/).
 
 ## Installation
 
@@ -71,7 +71,7 @@ print(result.detectors)
 print(result.observables)
 ```
 
-The full API and circuit specification is avaialble on the [documentation page](https://mark-koch.github.io/merlin/).
+The full circuit specification is available on the [documentation page](https://mark-koch.github.io/merlin-sim/circuit-format/).
 
 
 ## Rust Interface
