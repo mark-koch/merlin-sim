@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-import merlin
-from merlin import CircuitSampler
+import merlin_sim
+from merlin_sim import CircuitSampler
 
 
 def test_construction_counts_repr_and_all_result_families() -> None:
@@ -26,12 +26,12 @@ def test_construction_counts_repr_and_all_result_families() -> None:
         "CircuitSampler(num_qubits=2, num_measurements=2, num_detectors=2, "
         "num_observables=3, num_exp_vals=3, num_fault_sites=0)"
     )
-    assert merlin.CircuitSampler is CircuitSampler
-    assert not hasattr(merlin, "MeasurementSampler")
-    assert not hasattr(merlin, "DetectorSampler")
+    assert merlin_sim.CircuitSampler is CircuitSampler
+    assert not hasattr(merlin_sim, "MeasurementSampler")
+    assert not hasattr(merlin_sim, "DetectorSampler")
 
     result = sampler.sample(2)
-    assert merlin.SampleResult is type(result)
+    assert merlin_sim.SampleResult is type(result)
     assert repr(result) == "SampleResult(total_shots=2, accepted_shots=2)"
     assert result.total_shots == result.accepted_shots == 2
     assert result.discards == 0
@@ -64,7 +64,7 @@ def test_expectations_execute_in_place_and_do_not_collapse() -> None:
 
 def test_ccz_and_depolarize3_execute_in_circuit_order() -> None:
     ccz = CircuitSampler("RX 0 1 2\nCCZ 0 1 2\nEXP_VAL X0 X1 X2\nM 0 1 2", seed=20)
-    direct = merlin.Simulator(seed=20)
+    direct = merlin_sim.Simulator(seed=20)
     direct.reset_x(0, 1, 2)
     direct.ccz(0, 1, 2)
     expected_measurements = direct.measure_many(0, 1, 2)
@@ -228,5 +228,5 @@ def test_reference_and_shot_incompatibility_context() -> None:
     for a, b in ((0, 1), (0, 2), (1, 2)):
         lines.extend((f"CX {a} {b}", f"T_DAG {b}", f"CX {a} {b}"))
     lines.extend(("CX 0 2", "CX 1 2", "T 2", "CX 1 2", "CX 0 2", "MX 0"))
-    with pytest.raises(merlin.MeasurementError, match="reference measurement 0"):
+    with pytest.raises(merlin_sim.MeasurementError, match="reference measurement 0"):
         CircuitSampler("\n".join(lines), seed=8)

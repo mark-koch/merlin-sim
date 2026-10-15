@@ -4,7 +4,7 @@
 //! [`CircuitSampler`] for sampling Stim-format circuits.
 //!
 //! ```
-//! use merlin::{Simulator, StateVectorEndian};
+//! use merlin_sim::{Simulator, StateVectorEndian};
 //!
 //! let mut sim = Simulator::new();
 //! sim.t(0);

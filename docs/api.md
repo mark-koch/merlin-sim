@@ -1,6 +1,6 @@
 # Python API
 
-::: merlin.Simulator
+::: merlin_sim.Simulator
     options:
       heading_level: 2
       show_root_heading: true
@@ -41,7 +41,7 @@
         - reset_x
         - copy
 
-::: merlin.CircuitSampler
+::: merlin_sim.CircuitSampler
     options:
       heading_level: 2
       show_root_heading: true
@@ -59,7 +59,7 @@
 See [Circuit instructions](circuit-format.md) for the complete accepted circuit
 language.
 
-::: merlin.SampleResult
+::: merlin_sim.SampleResult
     options:
       heading_level: 2
       show_root_heading: true

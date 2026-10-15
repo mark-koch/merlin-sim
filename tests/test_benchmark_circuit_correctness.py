@@ -6,7 +6,7 @@ import pytest
 from benchmarks.models import CircuitCase
 from benchmarks.protocols.code_switching import build_code_switching_case, make_bbt_pair
 from benchmarks.protocols.distillation import build_distillation_case
-from merlin import CircuitSampler
+from merlin_sim import CircuitSampler
 
 
 def _expectation_probe_circuit(case: CircuitCase) -> str:

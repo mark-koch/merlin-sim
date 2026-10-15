@@ -22,7 +22,7 @@ use crate::bits::BitVec;
 /// Cloning the simulator copies both the quantum state and the exact RNG state.
 ///
 /// ```
-/// use merlin::{Simulator, StateVectorEndian};
+/// use merlin_sim::{Simulator, StateVectorEndian};
 ///
 /// let mut sim = Simulator::with_seed(7);
 /// sim.reset_x(0);

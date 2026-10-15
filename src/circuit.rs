@@ -268,7 +268,7 @@ impl Circuit {
     /// Parses a Stim-format source string.
     ///
     /// ```
-    /// use merlin::Circuit;
+    /// use merlin_sim::Circuit;
     /// let circuit = Circuit::parse("RX 0\nT 0\nMX 0");
     /// assert_eq!(circuit.num_qubits(), 1);
     /// assert_eq!(circuit.num_measurements(), 1);

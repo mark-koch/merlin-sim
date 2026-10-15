@@ -1,6 +1,6 @@
 use std::panic::catch_unwind;
 
-use merlin::{Circuit, CircuitSampler, Simulator, StateVectorEndian};
+use merlin_sim::{Circuit, CircuitSampler, Simulator, StateVectorEndian};
 
 #[test]
 fn interactive_api_grows_and_clones_rng() {

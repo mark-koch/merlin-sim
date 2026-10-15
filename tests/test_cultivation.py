@@ -10,7 +10,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from merlin import CircuitSampler
+from merlin_sim import CircuitSampler
 from experiments.cultivation.common import (
     inspect_circuit, load_checkpoint, save_checkpoint, validate_checkpoint,
 )

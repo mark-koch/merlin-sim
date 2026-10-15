@@ -14,7 +14,7 @@ SCHEMA_VERSION = 1
 
 
 def inspect_circuit(circuit):
-    from merlin import CircuitSampler
+    from merlin_sim import CircuitSampler
 
     source = (ROOT / f"circuit_d3_{circuit}.stim").read_text()
     probabilities = []

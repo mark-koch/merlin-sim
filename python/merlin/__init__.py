@@ -1,15 +1,17 @@
-"""Python interface to the Rust DCP simulator."""
+"""Deprecated compatibility alias for :mod:`merlin_sim`."""
 
-from ._core import (
-    CircuitSampler,
-    Simulator,
-    MeasurementError,
-    SampleResult,
+import warnings as _warnings
+
+_warnings.warn(
+    "merlin is deprecated; import merlin_sim instead.",
+    DeprecationWarning,
+    stacklevel=2,
 )
 
-__all__ = [
-    "CircuitSampler",
-    "Simulator",
-    "MeasurementError",
-    "SampleResult",
-]
+from merlin_sim import (
+    CircuitSampler as CircuitSampler,
+    MeasurementError as MeasurementError,
+    SampleResult as SampleResult,
+    Simulator as Simulator,
+    __all__ as __all__,
+)

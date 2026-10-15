@@ -153,7 +153,7 @@ class CircuitSampler:
 
         Examples:
             ```python
-            from merlin import CircuitSampler
+            from merlin_sim import CircuitSampler
 
             sampler = CircuitSampler(
                 '''
@@ -206,7 +206,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             ```
@@ -221,7 +221,7 @@ class Simulator:
             Mutating a previously untracked target grows the simulator.
 
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator()
             sim.reset_x(2)
@@ -343,7 +343,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.reset_x(0)
@@ -357,7 +357,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator()
             assert sim.measure_z(0) is False
@@ -373,7 +373,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator()
             bits = sim.measure_many(0, 1, 2)
@@ -392,7 +392,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator()
             sim.reset_x(0)
@@ -421,7 +421,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.reset_x(0, 1)
@@ -441,7 +441,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator()
             sim.reset_x(0)
@@ -463,7 +463,7 @@ class Simulator:
             `peek_z_probability` is an exact alias.
 
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator()
             sim.reset_x(0)
@@ -478,7 +478,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator()
             assert sim.peek_z_probability(0) == sim.peek_probability(0)
@@ -496,7 +496,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator()
             sim.reset_x(0)
@@ -514,7 +514,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.x_error(0, p=0.01)
@@ -531,7 +531,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.y_error(0, p=0.01)
@@ -548,7 +548,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.z_error(0, p=0.01)
@@ -565,7 +565,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.depolarize1(0, 1, 2, p=0.02)
@@ -585,7 +585,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.depolarize2(0, 1, 2, 3, p=0.03)
@@ -605,7 +605,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.depolarize3(0, 1, 2, 3, 4, 5, p=0.03)
@@ -631,7 +631,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator()
             sim.reset_x(0)
@@ -652,7 +652,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.reset(0)
@@ -665,7 +665,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.reset_z(0)
@@ -681,7 +681,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             sim.reset_x(0)
@@ -703,7 +703,7 @@ class Simulator:
 
         Examples:
             ```python
-            from merlin import Simulator
+            from merlin_sim import Simulator
 
             sim = Simulator(seed=1234)
             quantum_copy = sim.copy()

@@ -17,7 +17,7 @@ pip install merlin-sim
 The `Simulator` class can be used to interactively apply gates and measurements:
 
 ```python
-from merlin import Simulator
+from merlin_sim import Simulator
 
 sim = Simulator(seed=1234)
 sim.reset_x(0, 1)
@@ -50,9 +50,9 @@ MeasurementError: X measurement on qubit 0 is incompatible: non-affine zero set
 The `CircuitSampler` class can be used to sample from circuits in an extended stim-like format:
 
 ```python
-from merlin import CircuitSampler
+from merlin_sim import CircuitSampler
 
-from merlin import CircuitSampler
+from merlin_sim import CircuitSampler
 
 sampler = CircuitSampler("""
     RX 0

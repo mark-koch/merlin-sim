@@ -38,8 +38,9 @@ markers = [
 ]
 
 [tool.maturin]
-module-name = "merlin._core"
+module-name = "merlin_sim._core"
 python-source = "python"
+python-packages = ["merlin_sim", "merlin"]
 features = ["python"]
 
 [tool.uv.sources]

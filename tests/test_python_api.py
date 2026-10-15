@@ -1,8 +1,8 @@
-import merlin
+import merlin_sim
 import numpy as np
 import pytest
 
-from merlin import Simulator, MeasurementError
+from merlin_sim import Simulator, MeasurementError
 
 
 def test_simulator_api_mutates_in_place() -> None:
@@ -19,10 +19,10 @@ def test_simulator_api_mutates_in_place() -> None:
 def test_constructor_is_keyword_only_and_legacy_api_is_removed() -> None:
     with pytest.raises(TypeError):
         Simulator(1)  # type: ignore[misc]
-    assert not hasattr(merlin, "DCPState")
-    assert not hasattr(merlin, "DcpFrameSimulator")
-    assert not hasattr(merlin, "DcpGroupSimulator")
-    assert set(merlin.__all__) == {
+    assert not hasattr(merlin_sim, "DCPState")
+    assert not hasattr(merlin_sim, "DcpFrameSimulator")
+    assert not hasattr(merlin_sim, "DcpGroupSimulator")
+    assert set(merlin_sim.__all__) == {
         "CircuitSampler",
         "Simulator",
         "MeasurementError",
@@ -475,7 +475,7 @@ def test_peek_observable_expectation_is_non_mutating_and_validates() -> None:
 
 def test_peek_observable_expectation_handles_incompatible_projection() -> None:
     sim = _incompatible_simulator(seed=44)
-    with pytest.raises(merlin.MeasurementError):
+    with pytest.raises(merlin_sim.MeasurementError):
         sim.peek_x_probability(0)
     vector = sim.state_vector()
     expected = np.vdot(vector, vector[np.arange(vector.size) ^ 1]).real

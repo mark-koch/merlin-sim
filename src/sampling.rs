@@ -262,7 +262,7 @@ pub struct CircuitSamples<T> {
 /// noiseless reference replay performed during construction.
 ///
 /// ```
-/// use merlin::CircuitSampler;
+/// use merlin_sim::CircuitSampler;
 ///
 /// let mut sampler = CircuitSampler::with_seed(
 ///     "RX 0\nT 0\nEXP_VAL X0\nMX 0",
@@ -271,7 +271,7 @@ pub struct CircuitSamples<T> {
 /// let samples = sampler.sample(1)?;
 /// assert_eq!(samples.measurements.len(), 1);
 /// assert_eq!(samples.exp_vals.len(), 1);
-/// # Ok::<(), merlin::MeasurementError>(())
+/// # Ok::<(), merlin_sim::MeasurementError>(())
 /// ```
 #[derive(Debug)]
 pub struct CircuitSampler {

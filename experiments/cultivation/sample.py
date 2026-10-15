@@ -53,7 +53,7 @@ def sample_batch(source, metadata, seed, num_faults, offset, shots, *, backend="
         accepted = result.passed_shots
         errors = result.logical_errors
     elif backend == "merlin":
-        from merlin import CircuitSampler
+        from merlin_sim import CircuitSampler
 
         sampler = CircuitSampler(source, seed=batch_seed,
                                  postselect=list(range(metadata["num_detectors"])))
@@ -95,7 +95,7 @@ def collect(args):
     if backend_name not in {"merlin", "clifft"}:
         raise ValueError(f"Unknown backend: {backend_name}")
     backend = {"name": backend_name,
-               "version": version("merlin" if backend_name == "merlin" else "clifft")}
+               "version": version("merlin-sim" if backend_name == "merlin" else "clifft")}
     filename = (f"samples_{args.circuit}.json" if backend_name == "merlin"
                 else f"samples_clifft_{args.circuit}.json")
     output = args.output or ROOT / filename

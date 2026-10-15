@@ -1,12 +1,12 @@
 [package]
-name = "merlin"
+name = "merlin_sim"
 version = "0.1.0"
 edition = "2024"
 description = "Polynomial-time simulator for CNOT+T DCP-stabilizer states"
 readme = "README.md"
 
 [lib]
-name = "merlin"
+name = "merlin_sim"
 crate-type = ["cdylib", "rlib"]
 
 [features]

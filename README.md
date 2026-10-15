@@ -17,7 +17,7 @@ pip install merlin-sim
 The `Simulator` class can be used to interactively apply gates and measurements:
 
 ```python
-from merlin import Simulator
+from merlin_sim import Simulator
 
 sim = Simulator(seed=1234)
 sim.reset_x(0, 1)
@@ -50,7 +50,7 @@ MeasurementError: X measurement on qubit 0 is incompatible: non-affine zero set
 The `CircuitSampler` class can be used to sample from circuits in an extended stim-like format:
 
 ```python
-from merlin import CircuitSampler
+from merlin_sim import CircuitSampler
 
 sampler = CircuitSampler("""
     RX 0
@@ -79,7 +79,7 @@ The full API and circuit specification is avaialble on the [documentation page](
 The simulation core is also a standalone Rust library:
 
 ```rust
-use merlin::{
+use merlin_sim::{
     Circuit, CircuitSampler, Simulator, StateVectorEndian,
 };
 
@@ -97,5 +97,5 @@ let detector_circuit = Circuit::parse("M 0\nDETECTOR rec[-1]");
 let mut detector_sampler = CircuitSampler::from_circuit_with_seed(&detector_circuit, 1234)?;
 let detector_samples = detector_sampler.sample(100)?;
 assert_eq!(detector_samples.accepted_shots, 100);
-# Ok::<(), merlin::MeasurementError>(())
+# Ok::<(), merlin_sim::MeasurementError>(())
 ```

@@ -37,7 +37,7 @@ def run_merlin(
     callback: Callable[[dict[str, Any]], None] | None = None,
     resume: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    from merlin import CircuitSampler
+    from merlin_sim import CircuitSampler
 
     shots = int(shots)
     if shots < 0 or warmup_shots < 0 or save_iter < 0:
@@ -45,7 +45,7 @@ def run_merlin(
     configuration = _configuration(case, shots=shots, seed=seed, warmup_shots=warmup_shots, workload=workload)
     simulator = {
         "name": "merlin",
-        "version": importlib.metadata.version("merlin"),
+        "version": importlib.metadata.version("merlin-sim"),
         "python": sys.version.split()[0],
         "interface": "CircuitSampler(postselect=all_detectors)",
         "noise_sampling": "backend_internal",

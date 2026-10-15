@@ -12,17 +12,17 @@ use crate::simulator::Simulator as CoreSimulator;
 
 pyo3::create_exception!(_core, PyMeasurementError, PyException);
 
-#[pyclass(module = "merlin._core", name = "Simulator", skip_from_py_object)]
+#[pyclass(module = "merlin_sim._core", name = "Simulator", skip_from_py_object)]
 struct PySimulator {
     inner: CoreSimulator,
 }
 
-#[pyclass(module = "merlin._core", name = "CircuitSampler", skip_from_py_object)]
+#[pyclass(module = "merlin_sim._core", name = "CircuitSampler", skip_from_py_object)]
 struct PyCircuitSampler {
     inner: CoreCircuitSampler,
 }
 
-#[pyclass(module = "merlin._core", name = "SampleResult", skip_from_py_object)]
+#[pyclass(module = "merlin_sim._core", name = "SampleResult", skip_from_py_object)]
 struct PySampleResult {
     measurements: Py<PyAny>,
     detectors: Py<PyAny>,

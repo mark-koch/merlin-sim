@@ -27,7 +27,7 @@ from benchmarks.protocols.css import (
 )
 from benchmarks.protocols.distillation import build_distillation_case
 from benchmarks.protocols.gates import append_ccz, append_cs
-from merlin import CircuitSampler
+from merlin_sim import CircuitSampler
 
 
 def tiny_bbt_pair() -> BBTPair:
@@ -232,7 +232,7 @@ def test_bbt_cup_tensor_has_no_mixed_stabilizer_overlaps():
 
 
 def test_inverse_target_scoring_for_ideal_orthogonal_and_nonorthogonal_errors():
-    from merlin import CircuitSampler
+    from merlin_sim import CircuitSampler
 
     ideal = CircuitSampler("RX 0\nT 0\nT_DAG 0\nMX 0", seed=1).sample(100).measurements
     orthogonal = (
