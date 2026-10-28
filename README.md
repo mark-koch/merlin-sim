@@ -1,22 +1,8 @@
 # Merlin Quantum Simulator
 
-[![PyPI](https://img.shields.io/pypi/v/merlin-sim)](https://pypi.org/project/merlin-sim/)
-[![Documentation](https://img.shields.io/badge/docs-merlin--sim-blue)](https://mark-koch.github.io/merlin-sim/)
-[![arXiv](https://img.shields.io/badge/arXiv-2610.06811-b31b1b)](https://arxiv.org/abs/2610.06811)
-[![License](https://img.shields.io/badge/license-Apache%202.0-green)](LICENCE)
+`merlin-sim` is a simulator for non-Clifford quantum error correction circuits. It supports circuits that can be decomposed into CNOT, T, Paulis, Z-measurements and certain state-dependent *compatible* X-measurements. It keeps track of a representation of the state and can sample computational basis states, as well as compute expectation values and amplitudes, all in polynomial time in the circuit depth and size. It is based on the paper [Polynomial-time simulation of non-Clifford quantum error correction](https://arxiv.org/abs/2610.06811) by Serban Cercelescu, Mark Koch and Arthur Pesah.
 
-**Merlin** (`merlin-sim`) is a polynomial-time quantum simulator for **non-Clifford quantum error correction**. Unlike Clifford/stabilizer simulators such as stim, Merlin can simulate **magic state** protocols, including magic state distillation, magic state cultivation and code switching, at a cost polynomial in the circuit size rather than exponential in the number of T gates.
-
-Merlin supports circuits that can be decomposed into CNOT, T, Paulis, Z-measurements and certain state-dependent *compatible* X-measurements. It keeps track of a representation of the state and can sample computational basis states, as well as compute expectation values and amplitudes, all in polynomial time in the circuit depth and size. It is based on the paper [Polynomial-time simulation of non-Clifford quantum error correction](https://arxiv.org/abs/2610.06811) by Serban Cercelescu, Mark Koch and Arthur Pesah.
-
-Typical use cases:
-
-- Magic state distillation circuits, such as 15-to-1 and Bravyi-Haah 3k-to-1 protocols
-- Magic state cultivation ([Gidney, Shutty and Jones](https://arxiv.org/abs/2409.17595))
-- Code switching protocols and other non-Clifford logical gates
-- Noisy circuits with Pauli noise, detectors and logical observables in an extended stim-like format
-
-The documentation is available at [mark-koch.github.io/merlin-sim](https://mark-koch.github.io/merlin-sim/).
+The documentation is available [here](https://mark-koch.github.io/merlin-sim/).
 
 ## Installation
 
@@ -113,21 +99,3 @@ let detector_samples = detector_sampler.sample(100)?;
 assert_eq!(detector_samples.accepted_shots, 100);
 # Ok::<(), merlin_sim::MeasurementError>(())
 ```
-
-## Citing
-
-If you use Merlin in your research, please cite the paper:
-
-```bibtex
-@article{cercelescu2026polynomial,
-  title   = {Polynomial-time simulation of non-Clifford quantum error correction},
-  author  = {Cercelescu, Serban and Koch, Mark and Pesah, Arthur},
-  journal = {arXiv preprint arXiv:2610.06811},
-  year    = {2026},
-  url     = {https://arxiv.org/abs/2610.06811}
-}
-```
-
-## License
-
-Merlin is released under the [Apache 2.0 License](LICENCE).
