@@ -1,6 +1,15 @@
-#  Overview
+---
+description: >-
+  Merlin is a polynomial-time quantum simulator for non-Clifford quantum error
+  correction. It simulates magic state distillation, magic state cultivation and
+  code switching circuits built from CNOT, T and Pauli gates, in Python and Rust.
+---
 
-`merlin-sim` is a simulator for non-Clifford quantum error correction that runs in polynomial time.
+# Merlin Quantum Simulator
+
+**Merlin** (`merlin-sim`) is a polynomial-time quantum simulator for **non-Clifford quantum error correction**. Unlike Clifford/stabilizer simulators such as stim, Merlin can simulate **magic state** protocols, including magic state distillation, magic state cultivation and code switching, at a cost polynomial in the circuit size rather than exponential in the number of T gates.
+
+Merlin supports circuits that can be decomposed into CNOT, T, Paulis, Z-measurements and certain state-dependent *compatible* X-measurements. It can sample computational basis states and compute expectation values and amplitudes, all in polynomial time in the circuit depth and size. It is based on the paper [Polynomial-time simulation of non-Clifford quantum error correction](https://arxiv.org/abs/2610.06811) by Serban Cercelescu, Mark Koch and Arthur Pesah. The source code is on [GitHub](https://github.com/mark-koch/merlin-sim).
 
 
 ## Installation
@@ -52,8 +61,6 @@ The `CircuitSampler` class can be used to sample from circuits in an extended st
 ```python
 from merlin_sim import CircuitSampler
 
-from merlin_sim import CircuitSampler
-
 sampler = CircuitSampler("""
     RX 0
     T 0
@@ -71,4 +78,20 @@ print(result.measurements)
 print(result.exp_vals)
 print(result.detectors)
 print(result.observables)
+```
+
+The full circuit specification is described on the [Circuit Format](circuit-format.md) page.
+
+## Citing
+
+If you use Merlin in your research, please cite the paper:
+
+```bibtex
+@article{cercelescu2026polynomial,
+  title   = {Polynomial-time simulation of non-Clifford quantum error correction},
+  author  = {Cercelescu, Serban and Koch, Mark and Pesah, Arthur},
+  journal = {arXiv preprint arXiv:2610.06811},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2610.06811}
+}
 ```

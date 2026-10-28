@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{#
+  SEO overrides: a descriptive <title> for the landing page, Open Graph tags,
+  and schema.org structured data describing the simulator and its paper.
+#}
+
+{% block htmltitle %}
+  {% if page.is_homepage %}
+    <title>Merlin Quantum Simulator: polynomial-time non-Clifford and magic state simulation</title>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  {% set page_title = "Merlin Quantum Simulator" if page.is_homepage else page.title ~ " - Merlin Quantum Simulator" %}
+  {% set page_description = page.meta.description if page.meta and page.meta.description else config.site_description %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Merlin Quantum Simulator">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_description }}">
+  {% if page.is_homepage %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "Merlin Quantum Simulator",
+    "alternateName": ["Merlin", "merlin-sim", "merlin_sim"],
+    "description": "Merlin is a polynomial-time quantum simulator for non-Clifford quantum error correction. It simulates magic state distillation, magic state cultivation and code switching circuits built from CNOT, T and Pauli gates.",
+    "url": "https://mark-koch.github.io/merlin-sim/",
+    "codeRepository": "https://github.com/mark-koch/merlin-sim",
+    "programmingLanguage": ["Rust", "Python"],
+    "runtimePlatform": "Python 3.10+",
+    "license": "https://www.apache.org/licenses/LICENSE-2.0",
+    "isAccessibleForFree": true,
+    "applicationCategory": "Scientific software",
+    "keywords": [
+      "quantum simulator",
+      "non-Clifford simulator",
+      "magic state simulator",
+      "quantum error correction",
+      "magic state distillation",
+      "magic state cultivation",
+      "code switching",
+      "phase polynomial states",
+      "stim"
+    ],
+    "author": [
+      {"@type": "Person", "name": "Serban Cercelescu"},
+      {"@type": "Person", "name": "Mark Koch"},
+      {"@type": "Person", "name": "Arthur Pesah"}
+    ],
+    "citation": {
+      "@type": "ScholarlyArticle",
+      "name": "Polynomial-time simulation of non-Clifford quantum error correction",
+      "url": "https://arxiv.org/abs/2610.06811",
+      "identifier": "arXiv:2610.06811",
+      "author": [
+        {"@type": "Person", "name": "Serban Cercelescu"},
+        {"@type": "Person", "name": "Mark Koch"},
+        {"@type": "Person", "name": "Arthur Pesah"}
+      ]
+    }
+  }
+  </script>
+  {% endif %}
+{% endblock %}

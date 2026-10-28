@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use Merlin in your research, please cite the paper below."
+type: software
+title: "Merlin: polynomial-time quantum simulator for non-Clifford quantum error correction"
+abstract: >-
+  Merlin (merlin-sim) is a polynomial-time quantum simulator for non-Clifford
+  quantum error correction circuits. It simulates magic state distillation,
+  magic state cultivation and code switching protocols built from CNOT, T and
+  Pauli gates, Z measurements and compatible X measurements, by tracking
+  third-order phase-polynomial states.
+authors:
+  - family-names: Cercelescu
+    given-names: Serban
+  - family-names: Koch
+    given-names: Mark
+  - family-names: Pesah
+    given-names: Arthur
+version: 0.2.0
+license: Apache-2.0
+repository-code: "https://github.com/mark-koch/merlin-sim"
+url: "https://mark-koch.github.io/merlin-sim/"
+keywords:
+  - quantum simulator
+  - non-Clifford simulator
+  - magic state simulator
+  - quantum error correction
+  - magic state distillation
+  - magic state cultivation
+  - code switching
+  - phase polynomial states
+preferred-citation:
+  type: article
+  title: "Polynomial-time simulation of non-Clifford quantum error correction"
+  authors:
+    - family-names: Cercelescu
+      given-names: Serban
+    - family-names: Koch
+      given-names: Mark
+    - family-names: Pesah
+      given-names: Arthur
+  year: 2026
+  journal: "arXiv preprint"
+  doi: 10.48550/arXiv.2610.06811
+  url: "https://arxiv.org/abs/2610.06811"

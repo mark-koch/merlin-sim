@@ -1,10 +1,16 @@
-site_name: Merlin
-site_url: https://mark-koch.github.io/merlin/
-repo_url: https://github.com/mark-koch/merlin
-repo_name: mark-koch/merlin
+site_name: Merlin Quantum Simulator
+site_url: https://mark-koch.github.io/merlin-sim/
+site_description: >-
+  Merlin is a polynomial-time quantum simulator for non-Clifford quantum error
+  correction. It simulates magic state distillation, magic state cultivation and
+  code switching circuits built from CNOT, T and Pauli gates, in Python and Rust.
+site_author: Serban Cercelescu, Mark Koch, Arthur Pesah
+repo_url: https://github.com/mark-koch/merlin-sim
+repo_name: mark-koch/merlin-sim
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - content.code.copy
 

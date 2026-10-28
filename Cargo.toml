@@ -2,8 +2,14 @@
 name = "merlin_sim"
 version = "0.2.0"
 edition = "2024"
-description = "Polynomial-time simulator for CNOT+T DCP-stabilizer states"
+description = "Merlin: polynomial-time quantum simulator for non-Clifford quantum error correction (CNOT+T phase-polynomial / DCP-stabilizer states)"
 readme = "README.md"
+license = "Apache-2.0"
+repository = "https://github.com/mark-koch/merlin-sim"
+homepage = "https://mark-koch.github.io/merlin-sim/"
+documentation = "https://mark-koch.github.io/merlin-sim/"
+keywords = ["quantum", "simulator", "qec", "non-clifford", "magic-states"]
+categories = ["science", "simulation"]
 
 [lib]
 name = "merlin_sim"

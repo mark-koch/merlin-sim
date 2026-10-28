@@ -1,10 +1,48 @@
 [project]
 name = "merlin-sim"
 version = "0.2.0"
-description = "Polynomial-time simulator for non-Clifford quantum error correction"
+description = "Merlin: polynomial-time quantum simulator for non-Clifford quantum error correction (magic state distillation, cultivation and code switching)"
 readme = "README.md"
 requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENCE"]
+authors = [
+    { name = "Serban Cercelescu" },
+    { name = "Mark Koch" },
+    { name = "Arthur Pesah" },
+]
+keywords = [
+    "quantum",
+    "quantum-simulator",
+    "quantum-error-correction",
+    "non-clifford",
+    "magic-states",
+    "magic-state-distillation",
+    "magic-state-cultivation",
+    "code-switching",
+    "stabilizer",
+    "phase-polynomial",
+    "stim",
+    "fault-tolerance",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Rust",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Typing :: Typed",
+]
 dependencies = ["numpy>=2.1"]
+
+[project.urls]
+Homepage = "https://mark-koch.github.io/merlin-sim/"
+Documentation = "https://mark-koch.github.io/merlin-sim/"
+Repository = "https://github.com/mark-koch/merlin-sim"
+Issues = "https://github.com/mark-koch/merlin-sim/issues"
+Paper = "https://arxiv.org/abs/2610.06811"
 
 [build-system]
 requires = ["maturin>=1.9,<2"]
